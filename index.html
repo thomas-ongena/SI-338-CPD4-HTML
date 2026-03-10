@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ann Arbor Skyline</title>
-  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/new_styles.css">
+  <link rel="stylesheet" href="styles/style_reset.css">
 </head>
 
 <body>
@@ -21,7 +22,9 @@
   </nav>
 
   <header>
-    <h1>Ann Arbor Skyline</h1>
+    <h1>Ann Arbor Skyline Men's Cross Country</h1>
+    <h4>"Agile Minds. Big Hearts. Deep Questions."</h4>
+    <img src="images/athletes/21615274/skyline_logo.png" alt="Skyline High School Logo" class="header-logo">
   </header>
 
   <main>
@@ -50,7 +53,7 @@
       </div>
 
       <article id="athlete-roster">
-        <h3>Athlete Roster</h3>
+        <h3>Athlete Roster:</h3>
         
     <div class="athlete-card"
          data-name="Garrett Comer"
@@ -67,7 +70,6 @@
             class="athlete-photo"
             loading="lazy"
           />
-          <h3 class="athlete-name">Garrett Comer</h3>
         </div>
 
         <div class="card-back">
@@ -87,21 +89,34 @@
       </article>
     </section>
 
-    <section id="team-accomplishments">
-      <h2>Team Accomplishments</h2>
-
-      <article>
+  <section id="team-accomplishments">
+    <h2>Team Accomplishments</h2>
+    <article>
         <h3>Accomplishment Highlights</h3>
-        <ul>
-          <li><strong>Fastest Time:</strong> Garrett Comer — 17:22.3</li>
-<li><strong>Highest Placement:</strong> Garrett Comer — 9 place</li>
-<li><strong>Best Grade 9 Athlete:</strong> Garrett Comer — 18:24.6 PR</li>
-<li><strong>Best Grade 10 Athlete:</strong> Garrett Comer — 21:04.2</li>
-<li><strong>Best Grade 11 Athlete:</strong> Garrett Comer — 17:22.3</li>
-<li><strong>Most Meets Competed:</strong> Garrett Comer — 13 meets</li>
-        </ul>
-      </article>
-    </section>
+        <table class="accomplishments-table">
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Athlete & Stat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Category">Fastest Time</td>
+                    <td data-label="Athlete & Stat">Garrett Comer — 17:22.3</td>
+                </tr>
+                <tr>
+                    <td data-label="Category">Highest Placement</td>
+                    <td data-label="Athlete & Stat">Garrett Comer — 9th place</td>
+                </tr>
+                <tr>
+                    <td data-label="Category">Best 9th Grade Runner</td>
+                    <td data-label="Athlete & Stat">Garrett Comer — 18:24.6 (PR)</td>
+                </tr>
+                </tbody>
+        </table>
+    </article>
+  </section>
 
     <section id="player-comparison">
       <h2>Compare Athletes</h2>
@@ -169,24 +184,24 @@
             <thead>
               <tr>
                 <th>Meet</th>
-                <th>Garrett Comer Place</th>
-                <th>Garrett Comer Place</th>
+                <th>Athlete 1 Place</th>
+                <th>Athelet 2 Place</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>2023 Portage XC Invitational (Division 1 Reserve)</td><td>104</td><td>104</td></tr>
-<tr><td>2024 Portage Invitational</td><td>318</td><td>318</td></tr>
-<tr><td>2nd Ann Arbor City Preview presented by AARC</td><td>9</td><td>9</td></tr>
-<tr><td>37th Early Bird Open (HS Open 5K)</td><td>160</td><td>160</td></tr>
-<tr><td>39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)</td><td>134</td><td>134</td></tr>
-<tr><td>Bret Clements Bath Invitational (J.V.)</td><td>23</td><td>23</td></tr>
-<tr><td>Early Bird Open (Open Men&#39;s 5K)</td><td>67</td><td>67</td></tr>
-<tr><td>Jackson Invitational - Varsity (Orange Division (1000 + enrolment))</td><td>206</td><td>206</td></tr>
-<tr><td>Lamplighter Invitational</td><td>35</td><td>35</td></tr>
-<tr><td>Post Regional Open Meet (PROM) - Springfiled Oaks</td><td>13</td><td>13</td></tr>
-<tr><td>SEC HS Championship (All Division Reserve)</td><td>44</td><td>44</td></tr>
-<tr><td>SEC Jamboree 2 (Red) (Reserve Wave 1 (&lt;21:00))</td><td>21</td><td>21</td></tr>
-<tr><td>SEC-HS Jamboree 1 (Red/White Varsity Boys)</td><td>97</td><td>97</td></tr>
+              <tr><td data-label="Meet">2023 Portage XC Invitational (Division 1 Reserve)</td><td data-label="Athlete 1 Place">104</td><td data-label="Athlete 2 Place">104</td></tr>
+              <tr><td data-label="Meet">2024 Portage Invitational</td><td data-label="Athlete 1 Place">318</td><td data-label="Athlete 2 Place">318</td></tr>
+              <tr><td data-label="Meet">2nd Ann Arbor City Preview presented by AARC</td><td data-label="Athlete 1 Place">9</td><td data-label="Athlete 2 Place">9</td></tr>
+              <tr><td data-label="Meet">37th Early Bird Open (HS Open 5K)</td><td data-label="Athlete 1 Place">160</td><td data-label="Athlete 2 Place">160</td></tr>
+              <tr><td data-label="Meet">39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)</td><td data-label="Athlete 1 Place">134</td><td data-label="Athlete 2 Place">134</td></tr>
+              <tr><td data-label="Meet">Bret Clements Bath Invitational (J.V.)</td><td data-label="Athlete 1 Place">23</td><td data-label="Athlete 2 Place">23</td></tr>
+              <tr><td data-label="Meet">Early Bird Open (Open Men&#39;s 5K)</td><td data-label="Athlete 1 Place">67</td><td data-label="Athlete 2 Place">67</td></tr>
+              <tr><td data-label="Meet">Jackson Invitational - Varsity (Orange Division (1000 + enrolment))</td><td data-label="Athlete 1 Place">206</td><td data-label="Athlete 2 Place">206</td></tr>
+              <tr><td data-label="Meet">Lamplighter Invitational</td><td data-label="Athlete 1 Place">35</td><td data-label="Athlete 2 Place">35</td></tr>
+              <tr><td data-label="Meet">Post Regional Open Meet (PROM) - Springfiled Oaks</td><td data-label="Athlete 1 Place">13</td><td data-label="Athlete 2 Place">13</td></tr>
+              <tr><td data-label="Meet">SEC HS Championship (All Division Reserve)</td><td data-label="Athlete 1 Place">44</td><td data-label="Athlete 2 Place">44</td></tr>
+              <tr><td data-label="Meet">SEC Jamboree 2 (Red) (Reserve Wave 1 (&lt;21:00))</td><td data-label="Athlete 1 Place">21</td><td data-label="Athlete 2 Place">21</td></tr>
+              <tr><td data-label="Meet">SEC-HS Jamboree 1 (Red/White Varsity Boys)</td><td data-label="Athlete 1 Place">97</td><td data-label="Athlete 2 Place">97</td></tr>
             </tbody>
           </table>
         </div>
@@ -210,19 +225,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>Early Bird Open (Open Men&#39;s 5K)</td><td>2023-08-31</td><td>67 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/223660/results/894305" target="_blank">View Results</a></td></tr>
-<tr><td>Bret Clements Bath Invitational (J.V.)</td><td>2023-09-09</td><td>23 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/221738/results/887403" target="_blank">View Results</a></td></tr>
-<tr><td>SEC-HS Jamboree 1 (Red/White Varsity Boys)</td><td>2023-09-13</td><td>97 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/221764/results/887492" target="_blank">View Results</a></td></tr>
-<tr><td>Jackson Invitational - Varsity (Orange Division (1000 + enrolment))</td><td>2023-09-23</td><td>206 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/221802/results/887639" target="_blank">View Results</a></td></tr>
-<tr><td>SEC Jamboree 2 (Red) (Reserve Wave 1 (&lt;21:00))</td><td>2023-09-27</td><td>21 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/222702/results/890995" target="_blank">View Results</a></td></tr>
-<tr><td>2023 Portage XC Invitational (Division 1 Reserve)</td><td>2023-10-07</td><td>104 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/221793/results/887586" target="_blank">View Results</a></td></tr>
-<tr><td>39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)</td><td>2023-10-14</td><td>134 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/221531/results/886426" target="_blank">View Results</a></td></tr>
-<tr><td>SEC HS Championship (All Division Reserve)</td><td>2023-10-19</td><td>44 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/221762/results/887481" target="_blank">View Results</a></td></tr>
-<tr><td>Post Regional Open Meet (PROM) - Springfiled Oaks</td><td>2023-10-28</td><td>13 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/229906/results/916818" target="_blank">View Results</a></td></tr>
-<tr><td>37th Early Bird Open (HS Open 5K)</td><td>2024-08-29</td><td>160 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/235827/results/943367" target="_blank">View Results</a></td></tr>
-<tr><td>Lamplighter Invitational</td><td>2025-08-15</td><td>35 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/247194/results/1007644" target="_blank">View Results</a></td></tr>
-<tr><td>2nd Ann Arbor City Preview presented by AARC</td><td>2025-08-27</td><td>9 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/253860/results/1013715" target="_blank">View Results</a></td></tr>
-<tr><td>2024 Portage Invitational</td><td>2025-10-05</td><td>318 place</td><td><a href="https://www.athletic.net/CrossCountry/meet/237295/results/948796" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">Early Bird Open (Open Men&#39;s 5K)</td><td data-label="Date">2023-08-31</td><td data-label="Placement">67 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/223660/results/894305" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">Bret Clements Bath Invitational (J.V.)</td><td data-label="Date">2023-09-09</td><td data-label="Placement">23 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221738/results/887403" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">SEC-HS Jamboree 1 (Red/White Varsity Boys)</td><td data-label="Date">2023-09-13</td><td data-label="Placement">97 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221764/results/887492" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">Jackson Invitational - Varsity (Orange Division (1000 + enrolment))</td><td data-label="Date">2023-09-23</td><td data-label="Placement">206 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221802/results/887639" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">SEC Jamboree 2 (Red) (Reserve Wave 1 (&lt;21:00))</td><td data-label="Date">2023-09-27</td><td data-label="Placement">21 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/222702/results/890995" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">2023 Portage XC Invitational (Division 1 Reserve)</td><td data-label="Date">2023-10-07</td><td data-label="Placement">104 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221793/results/887586" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">39th Fr Gabriel Richard Cross Country Invite (Varsity Large School)</td><td data-label="Date">2023-10-14</td><td data-label="Placement">134 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221531/results/886426" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">SEC HS Championship (All Division Reserve)</td><td data-label="Date">2023-10-19</td><td data-label="Placement">44 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/221762/results/887481" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">Post Regional Open Meet (PROM) - Springfiled Oaks</td><td data-label="Date">2023-10-28</td><td data-label="Placement">13 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/229906/results/916818" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">37th Early Bird Open (HS Open 5K)</td><td data-label="Date">2024-08-29</td><td data-label="Placement">160 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/235827/results/943367" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">Lamplighter Invitational</td><td data-label="Date">2025-08-15</td><td data-label="Placement">35 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/247194/results/1007644" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">2nd Ann Arbor City Preview presented by AARC</td><td data-label="Date">2025-08-27</td><td data-label="Placement">9 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/253860/results/1013715" target="_blank">View Results</a></td></tr>
+            <tr><td data-label="Race">2024 Portage Invitational</td><td data-label="Date">2025-10-05</td><td data-label="Placement">318 place</td><td data-label="Results"><a href="https://www.athletic.net/CrossCountry/meet/237295/results/948796" target="_blank">View Results</a></td></tr>
           </tbody>
         </table>
       </article>
@@ -233,8 +248,15 @@
 
       <article class="gallery-grid">
         <h3>Gallery Images</h3>
-        <img src="./images/athletes/21615274/2023EarlyBirdOpen.jpg" alt="Team event photo" loading="lazy" />
-<img src="./images/athletes/21615274/2023PROM.jpg" alt="Team event photo" loading="lazy" />
+        <img src="./images/athletes/21615274/2023EarlyBirdOpen.jpg" alt="Team event photo Bird Open 2023" loading="lazy" />
+        <img src="./images/athletes/21615274/2023PROM.jpg" alt="Team event photo 2023 Prom" loading="lazy" />
+        <img src="./images/athletes/21615274/2023SECHSChampionship.jpg" alt="Team event photo SEC Championship" loading="lazy" />
+        <img src="./images/athletes/21615274/2025_20thRiverRatOpen.jpg" alt="Team event photo River Rat Open" loading="lazy" />
+        <img src="./images/athletes/21615274/2025AARC.jpg" alt="Team event photo AARC" loading="lazy" />
+        <img src="./images/athletes/21615274/2025DeWittXCInvitational.jpg" alt="Team event photo DeWitt Invitational" loading="lazy" />
+        <img src="./images/athletes/21615274/2025Lamplighter.jpg" alt="Team event photo Lamp Lighter" loading="lazy" />
+        <img src="./images/athletes/21615274/2025PortageInvitational.jpg" alt="Team event photo Portage Invitational" loading="lazy" />
+        <img src="./images/athletes/21615274/2025SEC_HSJamboree1.jpg" alt="Team event photo SEC Jamboree" loading="lazy" />
       </article>
     </section>
 

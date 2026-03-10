@@ -1,0 +1,141 @@
+/* --- 1. CSS VARIABLES (Shared Consistency) --- */
+:root {
+    --primary-blue: #004a99;
+    --accent-sky: #e0f2fe;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --bg-grey: #f4f4f4;
+    --nav-bg: #333333;
+    
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}
+
+/* --- 2. BASE STYLES (Rubric: Mobile-First) --- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-grey);
+    color: var(--text-dark);
+    font-family: 'Montserrat', sans-serif; /* Matches main page typography */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* Prevent horizontal scroll while keeping sticky headers functional */
+main, section, header, footer {
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* --- 3. NAVIGATION (Consistent with Team Page) --- */
+#athlete-nav {
+    background-color: var(--nav-bg);
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    padding: 10px 5%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    color: skyblue;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    border: 1px solid var(--text-light);
+    padding: 5px 12px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: var(--text-light);
+    color: var(--nav-bg);
+}
+
+/* --- 4. ATHLETE HEADER (Rubric: Circular Photos & Hierarchy) --- */
+#athlete-header {
+    background-color: var(--text-light);
+    border-bottom: 4px solid var(--primary-blue);
+    padding: var(--spacing-lg) 5%;
+    text-align: center; /* Centered layout for mobile impact */
+}
+
+.athlete-info h2 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: var(--spacing-sm);
+}
+
+.athlete-info h1 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin: 0 0 var(--spacing-md) 0;
+    line-height: 1.1;
+}
+
+/* Reusing the circular photo style from the main page roster */
+.athlete-photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--primary-blue);
+    margin: var(--spacing-md) auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.athlete-school {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.athlete-grade {
+    font-style: italic;
+    color: #555;
+    margin-top: 0;
+}
+
+/* Stats Container Styling */
+.athlete-records {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--accent-sky);
+    border-radius: 8px;
+}
+
+.athlete-sr, .athlete-pr {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: var(--primary-blue);
+}
+
+/* Tablet/Desktop Adjustments */
+@media (min-width: 768px) {
+    #athlete-header {
+        padding: 4rem 15%;
+    }
+}
