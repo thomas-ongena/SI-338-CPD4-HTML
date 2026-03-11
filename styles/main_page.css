@@ -1,4 +1,4 @@
-/* --- 1. CSS VARIABLES) --- */
+/* --- CSS color variables --- */
 :root {
     --primary-blue: #004a99;
     --accent-sky: #e0f2fe;
@@ -7,20 +7,17 @@
     --bg-grey: #f4f4f4;
     --nav-bg: #333333;
     
-    /* Standardized spacing units */
+    /* Spacing units */
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
 }
 
 
-/* --- 2. BASE STYLES --- */
+/* --- Base styles --- */
 body {
     background-color: var(--bg-grey);
     color: var(--text-dark);
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
 }
 
 html {
@@ -34,9 +31,9 @@ main, section, header, footer {
 }
 
 
-/* --- 3. NAVIGATION --- */
+/* --- Nav section --- */
 #main-nav {
-    background-color: var(--nav-bg, #333); 
+    background-color: var(--nav-bg); 
     position: sticky;
     top: 0;
     z-index: 10000;
@@ -45,12 +42,11 @@ main, section, header, footer {
 
 .nav-container {
     display: flex;
-    flex-direction: row; /* Forces horizontal layout */
-    justify-content: space-around; /* Distributes links evenly */
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     padding: 5px 0;
     overflow-x: auto; /* Allows swiping if screen is extremely narrow */
-    white-space: nowrap; /* Prevents text from wrapping to a second line */
 }
 
 .nav-link {
@@ -63,30 +59,32 @@ main, section, header, footer {
     transition: color 0.3s ease;
 }
 
-@media (min-width: 768px) {
-    .nav-link {
-        font-size: 20px; /* Larger text for desktop */
-        padding: 15px 20px;
-    }
-    
-    .nav-container {
-        gap: 20px;
-        justify-content: center;
-    }
-}
-
 .nav-link:hover, .nav-link:focus {
     color: var(--text-light);
     outline: 2px solid white;
 }
 
+@media (min-width: 768px) {
+    .nav-link {
+        font-size: 20px; 
+        padding: 15px 20px;
+    }
+    
+    .nav-container {
+        gap: 20px;
+        flex-direction: row; /* Horizontal layout for larger screens */
+        justify-content: center;
+        gap: var(--spacing-lg);
+    }
+}
 
-/* --- 4. HEADER --- */
+
+/* --- Header section --- */
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Moves text to the top */
+    justify-content: flex-start;
     padding: var(--spacing-md) var(--spacing-sm); /* Reduced padding for mobile */
     background-color: var(--text-light);
     border-bottom: 4px solid var(--primary-blue);
@@ -106,7 +104,6 @@ header h4 {
     font-style: italic;
     color: #555;
     margin: var(--spacing-sm) 0;
-    max-width: 90%;
 }
 
 .header-logo {
@@ -115,49 +112,25 @@ header h4 {
     margin-top: var(--spacing-md);
     /* object-fit ensures the logo isn't distorted */
     object-fit: contain; 
-    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.1));
 }
 
 /* Tablet/Desktop Header Adjustment */
 @media (min-width: 768px) {
     header {
-        padding: var(--spacing-lg) 10%;
+        padding: 4rem 10%; /* More breathing room on desktop */
     }
     .header-logo {
         width: 150px;
     }
 }
 
-/* --- 5. TABLET/DESKTOP --- */
-/* Only apply these when the screen is wide enough */
-@media (min-width: 768px) {
-    .nav-container {
-        flex-direction: row; /* Horizontal layout for larger screens */
-        justify-content: center;
-        gap: var(--spacing-lg);
-    }
+/* --- Section Animations --- */
 
-    header {
-        padding: 4rem 10%; /* More breathing room on desktop */
-    }
-}
-
-
-
-
-/* --- 6. SECTION ANIMATIONS --- */
-/* Subtle fade-in as the user scrolls or loads the page */
 section {
-    animation: fadeIn 0.8s ease-out;
-}
+    animation: fadeIn 0.8s ease-out; /* Subtle fade-in as the user scrolls or loads the page */
+}   
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-
-/* --- 7. ATHLETE CARDS --- */
+/* --- Athlete cards --- */
 #athlete-roster {
     display: grid;
     grid-template-columns: 1fr; /* Single column on mobile */
@@ -166,8 +139,8 @@ section {
 }
 
 .athlete-card {
-    perspective: 1000px; 
     min-height: 300px;
+    perspective: 1000px; 
 }
 
 .card-inner {
@@ -176,7 +149,6 @@ section {
     height: 100%;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    cursor: pointer;
 }
 
 /* Touch-friendly: card flips on hover or when it has focus */
@@ -192,7 +164,6 @@ section {
     backface-visibility: hidden;
     background: white;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -213,7 +184,7 @@ section {
     box-sizing: border-box;
 }
 
-/* Circular Athlete Photos */
+/* Circular Athlete Photo */
 .athlete-photo {
     width: 180px;
     height: 180px;
@@ -224,8 +195,8 @@ section {
 }
 
 
-/* --- 8. TABLE REFLOW --- */
-/* On mobile, we turn the table into a series of cards */
+/* --- Table --- */
+/* Turn table into a series of cards */
 @media (max-width: 767px) {
     table, thead, tbody, th, td, tr {
         display: block; 
@@ -260,28 +231,27 @@ section {
         padding-right: 10px;
         white-space: nowrap;
         font-weight: bold;
-        content: attr(data-label); /* Requires HTML update below */
+        content: attr(data-label); 
     }
 }
 
-/* --- 9. ACCESSIBILITY --- */
+/* --- Accesibility --- */
 @media (prefers-reduced-motion: reduce) {
     * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+        animation-duration: 0.01ms !important; /* Removes all animations */
         transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+        scroll-behavior: auto !important; /* Jumps right to section */
     }
 }
 
-/* --- 10. DESKTOP GRID --- */
+/* --- Desktop Grid Layout --- */
 @media (min-width: 768px) {
     #athlete-roster {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
 }
 
-/* --- 11. REFINED DARK MODE (Rubric: Contrast & A11y) --- */
+/* --- Dark Mode --- */
 @media (prefers-color-scheme: dark) {
     :root {
         /* Lighter, vibrant blue for dark backgrounds to pass contrast tests */
@@ -336,8 +306,7 @@ section {
     }
 }
 
-/* --- 12. HIGH CONTRAST MODE --- */
-/* For users who need maximum visual clarity */
+/* --- High Contrast Mode --- */
 @media (prefers-contrast: more) {
     :root {
         --primary-blue: #0000ff; /* Pure Blue */
@@ -357,12 +326,11 @@ section {
 }
 
 
-/* --- 14. TEAM ACCOMPLISHMENTS --- */
-/* Nudging headers to the right as requested */
+/* --- Team Accomplishments --- */
 #team-accomplishments h2, 
 #team-accomplishments h3 {
     text-align: left;
-    padding-left: 2%; /* Moves headers away from the far left edge */
+    padding-left: var(--spacing-sm); /* Moves headers away from the far left edge */
     margin-bottom: var(--spacing-md);
 }
 
@@ -374,7 +342,6 @@ section {
 
 #team-accomplishments ul {
     list-style: none; /* Remove default bullets for a cleaner look */
-    padding: 0;
     margin: 0 auto;
     max-width: 600px;
 }
@@ -387,7 +354,7 @@ section {
     border-radius: 4px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     
-    /* FIX: Prevents overlapping by using flex-column on mobile */
+    /* Prevents text overlapping by using flex-column */
     display: flex;
     flex-direction: column; 
     gap: 5px;
@@ -401,7 +368,7 @@ section {
     letter-spacing: 1px;
 }
 
-/* Tablet/Desktop: Switch back to horizontal for wider screens */
+/* Tablet/Desktop switch back to horizontal for wider screens */
 @media (min-width: 600px) {
     #team-accomplishments li {
         flex-direction: row;
@@ -411,18 +378,18 @@ section {
 }
 
 
-/* --- 15. PLAYER COMPARISON --- */
+/* --- Player Comparison --- */
 
-/* Aligning headers with the rest of the site */
+/* Aligning headers away from left edge */
 #player-comparison h2, 
 #player-comparison h3,
 .shared-meets h3 {
     text-align: left;
-    padding-left: 2%;
+    padding-left: var(--spacing-sm);
     margin-top: var(--spacing-lg);
 }
 
-/* Comparison Cards Container */
+/* --- Comparison Cards Container --- */
 .comparison-cards {
     display: flex;
     flex-direction: column; /* Stacked on mobile */
@@ -446,13 +413,13 @@ section {
 .comparison-card img {
     width: 120px;
     height: 120px;
-    border-radius: 50%; /* Circular images per rubric */
+    border-radius: 50%; /* Circular images */
     object-fit: cover;
     margin-bottom: var(--spacing-sm);
     border: 3px solid var(--primary-blue);
 }
 
-/* Shared Meets Table Styling */
+/* --- Shared Meets Table Styling --- */
 .shared-meets table {
     font-weight: bold;
     width: 90%;
@@ -463,7 +430,7 @@ section {
     overflow: hidden;
 }
 
-.shared-meets td[data-label="Meet"]:before {
+.shared-meets td[data-label="Meet"]:before {    /* Hide word meet */
         display: none;
     }
 
@@ -473,7 +440,7 @@ section {
     text-align: center;
 }
 
-/* --- 17. TEAM GALLERY PHOTOS --- */
+/* --- Team Gallery Photos --- */
 
 .gallery-grid {
     display: grid;
@@ -487,34 +454,12 @@ section {
 
 .gallery-grid img {
     width: 100%;
-    aspect-ratio: 1 / 1; 
-    object-fit: cover; /* Required Rubric Item #8: Prevents distortion */
+    object-fit: cover; /* Prevents distortion */
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
-@media (min-width: 600px) {
-    .gallery-grid {
-        /* Creates the collage effect by filling available space */
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    }
-}
-
-@media (min-width: 1024px) {
-    /* Advanced Collage: Some images take up more space on desktop */
-    .gallery-grid img:nth-child(3n) {
-        grid-column: span 1;
-    }
-    
-    /* Making every 4th image slightly taller for a masonry feel */
-    .gallery-grid img:nth-child(4n) {
-        height: 450px;
-    }
-}
-
-
-/* Final Tweaks */ 
+/* --- Final Tweaks --- */ 
 #team-events h2, 
 #team-events h3,
 header h2, 
@@ -532,4 +477,10 @@ header h3 {
 
 #team-gallery h3 {
     margin-top: 0; 
+}
+
+.athlete-card a {
+    color: var(--text-light); /* Sets the link to white */
+    text-decoration: underline;
+    font-weight: bold;
 }
