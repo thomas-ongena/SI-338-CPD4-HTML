@@ -123,12 +123,6 @@ header h4 {
     }
 }
 
-/* --- Section Animations --- */
-
-section {
-    animation: fadeIn 0.8s ease-out; /* Subtle fade-in as the user scrolls or loads the page */
-}   
-
 /* --- Athlete cards --- */
 #athlete-roster {
     display: grid;
@@ -237,9 +231,9 @@ section {
 /* --- Accesibility --- */
 @media (prefers-reduced-motion: reduce) {
     * {
-        animation-duration: 0.01ms !important; /* Removes all animations */
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important; /* Jumps right to section */
+        animation-duration: 0.01ms ; /* Removes all animations */
+        transition-duration: 0.01ms ;
+        scroll-behavior: auto ; /* Jumps right to section */
     }
 }
 
@@ -260,17 +254,16 @@ section {
         --text-light: #0f172a; /* Darker navy for element backgrounds */
         --bg-grey: #020617;    /* Deep black/blue background */
         --nav-bg: #1e293b;
-        --link-color: #60a5fa; /* High-visibility blue for links */
     }
 
     /* Fix for Header visibility */
     header {
-        background-color: var(--text-light) !important;
+        background-color: var(--text-light) ;
         border-bottom: 4px solid var(--primary-blue);
     }
 
     header h1, header h4 {
-        color: var(--text-dark) !important; /* Forces title to be visible */
+        color: var(--text-dark) ; /* Forces title to be visible */
     }
 
     /* Fix for Table Row visibility */
@@ -282,16 +275,16 @@ section {
 
     /* Fix for "View Results" and Footer Links */
     a, td[data-label="Results"] a {
-        color: var(--text-dark) !important;
+        color: var(--text-dark);
         text-underline-offset: 4px;
     }
 
     .athlete-link {
-    color: var(--nav-bg) !important;
+    color: var(--nav-bg) ;
     }
 
     footer a {
-        color: var(--primary-blue) !important;
+        color: var(--primary-blue) ;
         font-weight: bold;
     }
 
@@ -320,7 +313,7 @@ section {
     }
 
     tr, .athlete-card {
-        border: 3px solid black !important;
+        border: 3px solid black ;
     }
 }
 
@@ -337,43 +330,6 @@ section {
     padding: var(--spacing-md);
     width: 100%;
     box-sizing: border-box;
-}
-
-#team-accomplishments ul {
-    list-style: none; /* Remove default bullets for a cleaner look */
-    margin: 0 auto;
-    max-width: 600px;
-}
-
-#team-accomplishments li {
-    background: #ffffff; /* Contrast against background */
-    margin-bottom: 12px;
-    padding: 15px;
-    border-left: 5px solid var(--primary-blue);
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    
-    /* Prevents text overlapping by using flex-column */
-    display: flex;
-    flex-direction: column; 
-    gap: 5px;
-}
-
-/* Specific styling for the labels */
-#team-accomplishments li strong {
-    color: var(--primary-blue);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Tablet/Desktop switch back to horizontal for wider screens */
-@media (min-width: 600px) {
-    #team-accomplishments li {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
 }
 
 
@@ -460,9 +416,7 @@ section {
 
 /* --- Final Tweaks --- */ 
 #team-events h2, 
-#team-events h3,
-header h2, 
-header h3 {
+#team-events h3{
     padding-left: 2%;
 } 
 
