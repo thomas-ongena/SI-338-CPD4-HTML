@@ -71,7 +71,6 @@ main, section, header, footer {
     }
     
     .nav-container {
-        gap: 20px;
         flex-direction: row; /* Horizontal layout for larger screens */
         justify-content: center;
         gap: var(--spacing-lg);
