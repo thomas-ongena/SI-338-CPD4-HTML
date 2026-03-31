@@ -1,5 +1,5 @@
 /* --- CSS Color Variables --- */
-/* Using the exact same variables from index.html for consistency */
+/* Using the same variables for consistency */
 :root {
     --primary-blue: #93c5fd; 
     --accent-sky: #1e293b;
@@ -8,6 +8,7 @@
     --bg-grey: #020617;    
     --nav-bg: #1e293b;
     --link-color: #60a5fa;
+    --surface-dark: #2b2b2b;
     
     /* Standardized spacing units */
     --spacing-sm: 0.5rem;
@@ -17,13 +18,12 @@
 
 /* --- Base Styles --- */
 html, body {
-    /* Matches the background and text color of your home page */
     background-color: var(--text-light);
     color: var(--text-dark);
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif; /* Ensure this font is linked in your HTML */
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
 }
 
@@ -47,36 +47,67 @@ a:hover, a:focus {
     text-decoration: underline;
 }
 
+/* --- Nav styling --- */ 
+
+#athlete-nav {
+    background-color: var(--surface-dark);   /* Distinct dark grey — creates contrast against
+                                     the page background of var(--text-light) */
+    width: 100%;
+}
+
 #athlete-nav .nav-container {
     display: flex;
-    flex-direction: column; /* Stacks title and link vertically for centering */
-    align-items: center;    /* Centers items horizontally */
-    justify-content: center; /* Centers items vertically if height is present */
-    text-align: center;
-    gap: 10px;              /* Adds space between the title and the link */
-    padding: 15px 0;
+    flex-direction: row;              /* Horizontal — logo | title | link */
+    justify-content: space-between;   /* Pushes logo to far left, link to far right */
+    align-items: center;
+    padding: 12px 30px;
+    gap: 1rem;
 }
 
-#athlete-nav .nav-title{
-    font-size: 28px;
+/* Skyline logo inside the nav — sized to match the bar height */
+.nav-logo {
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;                   /* Prevents logo from compressing on resize */
+}
+
+#athlete-nav .nav-title {
+    font-size: 1.2rem;
     font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    flex: 1;                          /* Takes up remaining space, keeps title centered
+                                         between the logo and link naturally */
 }
 
-#athlete-nav .nav-link{
-    font-size: 20px;
+#athlete-nav .nav-link {
+    font-size: 0.95rem;
+    color: var(--primary-blue);
+    font-weight: bold;
+    white-space: nowrap;              /* Prevents link text from wrapping on resize */
+    flex-shrink: 0;
+    transition: color 0.3s ease;
 }
 
-#athlete-header h2{
-    padding-left: 2%;
+#athlete-nav .nav-link:hover,
+#athlete-nav .nav-link:focus {
+    color: #ffffff;
 }
 
-#athlete-header .athlete-photo{
-    width: 230px;
-    height: 230px;
+#athlete-header .athlete-photo {
+    width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 8px;
     display: block;
-    margin: auto;
+    margin: 0 auto 0 auto;   /* Centered horizontally, no extra top gap */
+    border: 3px solid var(--primary-blue);  /* Adds a polished frame */
+}
+
+#athlete-header {
+    padding-top: 1.5rem;     /* Pulling content up */
+    padding-bottom: 2rem;
 }
 
 .athlete-info {
@@ -98,6 +129,90 @@ a:hover, a:focus {
     color: var(--text-light);
     border-radius: 8px 8px 8px 8px; /* Rounds all corners */
     min-width: 250px;
+}
+
+.athlete-info-card {
+    background-color: var(--surface-dark);       /* Same dark grey as the nav bar — consistent */
+    border-radius: 0 0 10px 10px;    /* Rounds only bottom corners so it reads as
+                                         a base attached to the photo above it */
+    padding: 1.25rem 1.5rem;
+    max-width: 300px;                /* Matches the photo width exactly */
+    margin: 0 auto;                  /* Centers under the photo */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;                     /* Even spacing between each info row */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* All text paragraphs inside the card */
+.athlete-info-card p {
+    margin: 0;
+    color: #e2e8f0;                  /* Soft white — readable on dark background */
+    font-size: 0.95rem;
+}
+
+/* School name */
+.athlete-info-card .athlete-school {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+}
+
+/* Thin divider line between school and grade */
+.athlete-info-card .athlete-school::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 1px;
+    background-color: var(--primary-blue);
+    margin: 0.5rem auto 0;           /* Centers the divider below the school name */
+}
+
+/* Link inside the card — inherits the blue link style but sits on dark bg */
+.athlete-info-card a {
+    color: var(--primary-blue);
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.athlete-info-card a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Records row — already styled by .athlete-records, just override background
+   and padding since it now lives on the dark card instead of its own bg */
+.athlete-info-card .athlete-records {
+    background-color: transparent;   /* Removes the original light blue background
+                                         — card provides the background now */
+    border-radius: 0;
+    padding: 0.5rem 0 0;
+    min-width: unset;
+    gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1); /* Subtle separator above records */
+    width: 100%;
+    justify-content: center;
+}
+
+/* Record text — overrides dark text from .athlete-records since bg is now dark */
+.athlete-info-card .athlete-records p {
+    color: #e2e8f0;
+    font-size: 0.85rem;
+}
+
+#athlete-header h2 {
+    padding-left: 2%;
+    font-size: 1.6rem;
+    border-bottom: 3px solid var(--primary-blue);  /* Matches homepage style */
+    padding-bottom: 0.4rem;
+    display: inline-block;    /* Border wraps text width only, not full row */
+    margin-bottom: 1.5rem;
 }
 
 #results-table {
@@ -154,11 +269,16 @@ a:hover, a:focus {
 
 .gallery-grid img {
     width: 100%;
-    height: 200px; /* Fixed height for uniformity */
-    object-fit: cover; /* Prevents images from stretching/squishing */
+    height: 200px;
+    object-fit: cover;
+    object-position: middle;    
     border-radius: 4px;
     transition: transform 0.3s ease;
     border: 1px solid #eee;
+}
+
+.gallery-grid img:nth-child(4) {
+    object-position: top;
 }
 
 .gallery-grid img:hover {
@@ -177,4 +297,18 @@ a:hover, a:focus {
 #performance-graph img:hover {  /* Makes it easier to read when tapped on */
     transform: scale(1.4);
     cursor: zoom-in;
+}
+
+/* Light mode */
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-blue: #004a99;     /* Original blue — readable on white */
+        --accent-sky: #e0f2fe;       /* Light sky blue for table/card backgrounds */
+        --text-dark: #1a1a1a;        /* Near-black body text */
+        --text-light: #ffffff;       /* White for element backgrounds */
+        --bg-grey: #f4f4f4;          /* Light grey page background */
+        --nav-bg: #333333;           /* Dark nav bar — intentionally kept dark */
+        --surface-dark: #333333;     /* Nav and info card — dark against light page */
+    }
 }

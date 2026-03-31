@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Garrett Comer</title>
-  <link rel="stylesheet" href="../../styles/style_reset.css">
-  <link rel="stylesheet" href="../../styles/player_styles.css">
+  <link rel="stylesheet" href="styles/style_reset.css">
+  <link rel="stylesheet" href="styles/player_styles.css">
+  <link rel="stylesheet" href="styles/laptop.css">
   
 </head>
 
@@ -14,30 +15,29 @@
 
   <nav id="athlete-nav">
     <div class="nav-container">
+      <img src="../../images/athletes/21615274/skyline_logo.png" alt="Skyline High School Logo" class="nav-logo"/>
       <span class="nav-title">Garrett Comer Athlete Profile</span>
-      <a href="https://thomas-ongena.github.io/SI-338-CPD4-HTML/index.html" class="nav-link">
-        Return to Home Page
-      </a>
+      <a href="../../index.html" class="nav-link">Home Page</a>
     </div>
   </nav>
 
   <header id="athlete-header">
     <article class="athlete-info">
       <h2>Athlete Information</h2>
-
-
       <img src="../../images/athletes/21615274/profile.jpg" alt="Athlete profile picture" class="athlete-photo" />
 
-      <p class="athlete-school">Ann Arbor Skyline</p>
-      <p class="athlete-grade">Current Grade: 11</p>
+      <div class="athlete-info-card">
+        <p class="athlete-school">Ann Arbor Skyline</p>
+        <p class="athlete-grade">Current Grade: 11</p>
 
-      <a href="https://www.athletic.net/athlete/21615274/cross-country/">
-        Link to athlete.net account
-      </a>
+        <a href="https://www.athletic.net/athlete/21615274/cross-country/">
+        athlete.net account
+        </a>
 
-      <div class="athlete-records">
-        <p class="athlete-sr">Season Record (SR): 17:22.3</p>
-        <p class="athlete-pr">Personal Record (PR): 17:22.3</p>
+        <div class="athlete-records">
+          <p class="athlete-sr">Season Record (SR): 17:22.3</p>
+          <p class="athlete-pr">Personal Record (PR): 17:22.3</p>
+        </div>
       </div>
     </article>
   </header>
@@ -53,18 +53,17 @@
             <legend>Filter Race Results</legend>
 
             <p id="filter-instructions">
-              Use the fields below to filter race results by location or date
+              Use the fields below to filter race results by meet or date
             </p>
 
             <div class="filter-group">
-              <label for="filter-location">Location:</label>
-              <input type="text" id="filter-location" name="filter-location" placeholder="Enter location"
-                aria-describedby="filter-instructions" />
+              <label for="filter-meet">Meet Name:</label>
+              <input type="text" id="filter-meet" name="filter-meet" placeholder="e.g. SEC, Portage" aria-describedby="filter-instructions"/>
             </div>
 
             <div class="filter-group">
               <label for="filter-date">Date:</label>
-              <input type="date" id="filter-date" name="filter-date" aria-describedby="filter-instructions" />
+              <input type="text" id="filter-date" name="filter-date" placeholder="e.g. 2023, Aug 2025" aria-describedby="filter-instructions"/>
             </div>
           </fieldset>
         </form>
@@ -127,20 +126,18 @@
       <h2>Gallery</h2>
 
       <article class="gallery-grid">
-        <h3>Athlete Gallery Images</h3>
         <img src="../../images/athletes/21615274/2023EarlyBirdOpen.jpg" alt="Race gallery photo: 2023Earlybirdopen" loading="lazy" />
-<img src="../../images/athletes/21615274/2023PROM.jpg" alt="Race gallery photo: 2023Prom" loading="lazy" />
-<img src="../../images/athletes/21615274/2023SECHSChampionship.jpg" alt="Race gallery photo: 2023Sechschampionship" loading="lazy" />
-<img src="../../images/athletes/21615274/2024EarlyBirdOpen.jpg" alt="Race gallery photo: 2024Earlybirdopen" loading="lazy" />
-<img src="../../images/athletes/21615274/202557thHolly-Duane.jpg" alt="Race gallery photo: 202557Thholly Duane" loading="lazy" />
-<img src="../../images/athletes/21615274/2025AARC.jpg" alt="Race gallery photo: 2025Aarc" loading="lazy" />
-<img src="../../images/athletes/21615274/2025DeWittXCInvitational.jpg" alt="Race gallery photo: 2025Dewittxcinvitational" loading="lazy" />
-<img src="../../images/athletes/21615274/2025Lamplighter.jpg" alt="Race gallery photo: 2025Lamplighter" loading="lazy" />
-<img src="../../images/athletes/21615274/2025PortageInvitational.jpg" alt="Race gallery photo: 2025Portageinvitational" loading="lazy" />
-<img src="../../images/athletes/21615274/2025SEC_HSJamboree1.jpg" alt="Race gallery photo: 2025Sec Hsjamboree1" loading="lazy" />
-<img src="../../images/athletes/21615274/2025SEC_HSJamboree2.jpg" alt="Race gallery photo: 2025Sec Hsjamboree2" loading="lazy" />
-<img src="../../images/athletes/21615274/2025_20thRiverRatOpen.jpg" alt="Race gallery photo: 2025 20Thriverratopen" loading="lazy" />
-<img src="../../images/athletes/21615274/2025_SEC-HSChampionship.jpg" alt="Race gallery photo: 2025 Sec Hschampionship" loading="lazy" />
+        <img src="../../images/athletes/21615274/2023PROM.jpg" alt="Race gallery photo: 2023Prom" loading="lazy" />
+        <img src="../../images/athletes/21615274/2023SECHSChampionship.jpg" alt="Race gallery photo: 2023Sechschampionship" loading="lazy" />
+        <img src="../../images/athletes/21615274/2024EarlyBirdOpen.jpg" alt="Race gallery photo: 2024Earlybirdopen" loading="lazy" />
+        <img src="../../images/athletes/21615274/202557thHolly-Duane.jpg" alt="Race gallery photo: 202557Thholly Duane" loading="lazy" />
+        <img src="../../images/athletes/21615274/2025AARC.jpg" alt="Race gallery photo: 2025Aarc" loading="lazy" />
+        <img src="../../images/athletes/21615274/2025DeWittXCInvitational.jpg" alt="Race gallery photo: 2025Dewittxcinvitational" loading="lazy" />
+        <img src="../../images/athletes/21615274/2025Lamplighter.jpg" alt="Race gallery photo: 2025Lamplighter" loading="lazy" />
+        <img src="../../images/athletes/21615274/2025PortageInvitational.jpg" alt="Race gallery photo: 2025Portageinvitational" loading="lazy" />
+        <img src="../../images/athletes/21615274/2025SEC_HSJamboree1.jpg" alt="Race gallery photo: 2025Sec Hsjamboree1" loading="lazy" />
+        <img src="../../images/athletes/21615274/2025SEC_HSJamboree2.jpg" alt="Race gallery photo: 2025Sec Hsjamboree2" loading="lazy" />
+        <img src="../../images/athletes/21615274/2025_20thRiverRatOpen.jpg" alt="Race gallery photo: 2025 20Thriverratopen" loading="lazy" />
       </article>
     </section>
 
@@ -162,7 +159,7 @@
       </p>
     </div>
   </footer>
-
+<script src="scripts/player.js" defer></script>
 </body>
 
 </html>

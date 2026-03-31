@@ -7,6 +7,7 @@
   <title>Ann Arbor Skyline</title>
   <link rel="stylesheet" href="styles/style_reset.css">
   <link rel="stylesheet" href="styles/main_page.css">
+  <link rel="stylesheet" href="styles/laptop.css">
 </head>
 
 <body>
@@ -22,8 +23,10 @@
   </nav>
 
   <header>
-    <h1>Ann Arbor Skyline Men's Cross Country</h1>
-    <h4>"Agile Minds. Big Hearts. Deep Questions."</h4>
+    <div class="header-text"> 
+     <h1>Ann Arbor Skyline Men's Cross Country</h1>
+     <h4>"Agile Minds. Big Hearts. Deep Questions."</h4>
+    </div>
     <img src="images/athletes/21615274/skyline_logo.png" alt="Skyline High School Logo" class="header-logo">
   </header>
 
@@ -85,9 +88,60 @@
 
       </div>
     </div>
+    <div class="athlete-card"
+        data-name="Athlete Name"
+        data-grade="12"
+        data-sr="00:00.0"
+        data-pr="00:00.0">
+      <div class="card-inner">
+
+        <div class="card-front">
+            <img
+                src="./images/athletes/21615274/cross_country_A.jpg"
+                alt="Athlete Name profile picture"
+                class="athlete-photo"
+                loading="lazy"
+            />
+        </div>
+
+        <div class="card-back">
+            <h3 class="athlete-name">Brady Smith</h3>
+            <p class="athlete-grade">Grade: 12</p>
+            <p class="athlete-sr">Season Record: 17:58.4</p>
+            <p class="athlete-pr">Personal Record: 17:50.2</p>
+            <a href="player_profile.html" class="athlete-link">View Profile</a>
+        </div>
+    </div>
+  </div>
+
+    <div class="athlete-card"
+        data-name="Athlete Name"
+        data-grade="12"
+        data-sr="00:00.0"
+        data-pr="00:00.0">
+      <div class="card-inner">
+
+        <div class="card-front">
+            <img
+                src="./images/athletes/21615274/cross_country_B.jpg"
+                alt="Athlete Name profile picture"
+                class="athlete-photo"
+                loading="lazy"
+            />
+        </div>
+
+        <div class="card-back">
+            <h3 class="athlete-name">John Golden</h3>
+            <p class="athlete-grade">Grade: 12</p>
+            <p class="athlete-sr">Season Record: 19:03.4</p>
+            <p class="athlete-pr">Personal Record: 18:40.2</p>
+            <a href="player_profile.html" class="athlete-link">View Profile</a>
+        </div>
+    </div>
+  </div>
     
-      </article>
-    </section>
+    </article>
+  </section>
 
   <section id="team-accomplishments">
     <h2>Team Accomplishments</h2>
@@ -107,11 +161,11 @@
                 </tr>
                 <tr>
                     <td data-label="Category">Highest Placement</td>
-                    <td data-label="Athlete & Stat">Garrett Comer — 9th place</td>
+                    <td data-label="Athlete & Stat">John Golden — 5th place</td>
                 </tr>
                 <tr>
-                    <td data-label="Category">Best 9th Grade Runner</td>
-                    <td data-label="Athlete & Stat">Garrett Comer — 18:24.6 (PR)</td>
+                    <td data-label="Category">Best 12th Grade Runner</td>
+                    <td data-label="Athlete & Stat">Garrett Comer — 17:22.3</td>
                 </tr>
                 </tbody>
         </table>
@@ -247,7 +301,6 @@
       <h2>Team Gallery</h2>
 
       <article class="gallery-grid">
-      <h3>Gallery Images</h3>
         <img src="./images/athletes/21615274/2023EarlyBirdOpen.jpg" alt="Team event photo Bird Open 2023" loading="lazy" />
         <img src="./images/athletes/21615274/2023PROM.jpg" alt="Team event photo 2023 Prom" loading="lazy" />
         <img src="./images/athletes/21615274/2023SECHSChampionship.jpg" alt="Team event photo SEC Championship" loading="lazy" />
@@ -278,7 +331,7 @@
       </p>
     </div>
   </footer>
-
+<script src="scripts/main.js" defer></script>
 </body>
 
 </html>

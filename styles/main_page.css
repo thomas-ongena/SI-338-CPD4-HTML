@@ -1,5 +1,6 @@
 /* --- CSS color variables --- */
 :root {
+    /* Color Variables */
     --primary-blue: #004a99;
     --accent-sky: #e0f2fe;
     --text-dark: #1a1a1a;
@@ -60,8 +61,8 @@ main, section, header, footer {
 }
 
 .nav-link:hover, .nav-link:focus {
-    color: var(--text-light);
-    outline: 2px solid white;
+    color: var(--text-dark);
+    outline: 1px solid white;
 }
 
 @media (min-width: 768px) {
@@ -158,6 +159,7 @@ header h4 {
     background: white;
     border-radius: 15px;
     display: flex;
+    margin-right: var(--spacing-sm);
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -216,7 +218,7 @@ header h4 {
         margin-bottom: 5px;
     }
 
-    /* This creates the label on the left of each row item */
+    /* Creates the label on the left of each row item */
     td:before {
         position: absolute;
         left: 10px;
@@ -256,7 +258,7 @@ header h4 {
         --nav-bg: #1e293b;
     }
 
-    /* Fix for Header visibility */
+    /* Header visibility */
     header {
         background-color: var(--text-light) ;
         border-bottom: 4px solid var(--primary-blue);
@@ -266,7 +268,7 @@ header h4 {
         color: var(--text-dark) ; /* Forces title to be visible */
     }
 
-    /* Fix for Table Row visibility */
+    /* Table Row visibility */
     tr {
         background-color: #1e293b;
         color: var(--text-dark);
@@ -415,15 +417,10 @@ header h4 {
 }
 
 /* --- Final Tweaks --- */ 
-#team-events h2, 
-#team-events h3{
-    padding-left: 2%;
-} 
 
 
 #team-gallery h2 {
     text-align: left;
-    padding-left: 2%;
     margin-top: var(--spacing-lg);
     margin-bottom: 2px; 
 }
